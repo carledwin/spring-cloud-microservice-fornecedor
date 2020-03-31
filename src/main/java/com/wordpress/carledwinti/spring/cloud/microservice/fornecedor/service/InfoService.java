@@ -23,4 +23,9 @@ public class InfoService {
 
         return infoFornecedorResponse;
     }
+
+    public InfoFornecedor save(InfoFornecedor infoFornecedor) {
+
+        return infoRepository.save(infoFornecedor);
+    }
 }

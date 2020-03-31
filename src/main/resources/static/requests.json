@@ -1,0 +1,3 @@
+curl -X POST -H 'Content-Type:application/json' -d '{"nome":"Cadeiras Bare e Cia", "endereco":"Avenida dos Atares 343", "estado":"SP"}' http://localhost:8081/info/new
+
+curl -X GET http://localhost:8081/info/SP
