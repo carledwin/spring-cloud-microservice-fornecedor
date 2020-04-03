@@ -1,6 +1,7 @@
 package com.wordpress.carledwinti.spring.cloud.microservice.fornecedor.service;
 
 import com.wordpress.carledwinti.spring.cloud.microservice.fornecedor.dto.ItemPedidoDto;
+import com.wordpress.carledwinti.spring.cloud.microservice.fornecedor.enums.PedidoStatusEnum;
 import com.wordpress.carledwinti.spring.cloud.microservice.fornecedor.model.ItemPedido;
 import com.wordpress.carledwinti.spring.cloud.microservice.fornecedor.model.Pedido;
 import com.wordpress.carledwinti.spring.cloud.microservice.fornecedor.model.Produto;
@@ -30,6 +31,7 @@ public class PedidoService {
         List<ItemPedido> itensPedido = toItemPedido(itensPedidoDto);
 
         Pedido pedido = new Pedido(itensPedido);
+        pedido.setPedidoStatusEnum(PedidoStatusEnum.RECEBIDO);
         pedido.setTempoDePreparo(itensPedido.size());
 
         return pedidoRepository.save(pedido);
